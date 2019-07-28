@@ -7,14 +7,14 @@
 # service_name=
 
 # Leave blank to disable this service by default.
-set_service_flag $service_name
+set_service_flag $service_name yes
 #set_service_flag $service_name yes
 
 # Sets the application prefix depending on what $INGRESS_TYPE is set to. 
 # Results in one of the following paths: 
 # https://some.domain/prefix/
 # https://prefix.some.domain/
-path_prefix ${service_name^^} $service_name
+#path_prefix ${service_name^^} $service_name
 
 # This is how to optionally include additional .yml files. See the prometheus repo 
 # for a complete example.
