@@ -14,6 +14,8 @@ services:
       placement:
         constraints:
           - node.role == manager
+      labels:
+        - com.ouroboros.enable=true
       # Big services will need this modified or removed.
       resources:
         limits:
