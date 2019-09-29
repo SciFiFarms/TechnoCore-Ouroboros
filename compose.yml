@@ -6,7 +6,7 @@ networks:
 services:
   ouroboros:
     # -u: allow self update
-    command: --self-update --swarm --labels-enable --labels-only
+    command: --self-update --swarm --labels-only
     deploy:
       mode: global
       restart_policy:
