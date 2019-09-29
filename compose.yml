@@ -37,7 +37,8 @@ services:
     command: >
       bash -c "deploy && 
               echo 'Stack deployed. Sleeping until service restarted.' &&
-              sleep infinity"
+              mkfifo pipe && cat pipe &&
+              echo 'DONE'"
     deploy:
       mode: global
       restart_policy:
