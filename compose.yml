@@ -36,7 +36,7 @@ services:
   ouroboros-technocore:
     command: >
       bash -c "deploy && 
-              echo "Stack deployed. Sleeping until service restarted." &&
+              echo 'Stack deployed. Sleeping until service restarted.' &&
               sleep infinity"
     deploy:
       mode: global
