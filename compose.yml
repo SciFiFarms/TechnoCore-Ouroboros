@@ -54,7 +54,7 @@ services:
         reservations:
           memory: 64M
     environment:
-      - SERVER_HOSTNAME=${HOSTNAME}
+      - SERVER_HOSTNAME=${SERVER_HOSTNAME}
       - HOST_SERVICES_DIR=${TECHNOCORE_SERVICES}
       - TECHNOCORE_ROOT=${TECHNOCORE_ROOT}
     image: ${image_provider:-scififarms}/technocore:${TAG:-latest}
