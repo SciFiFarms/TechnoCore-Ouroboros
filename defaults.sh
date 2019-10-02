@@ -23,3 +23,7 @@ set_service_flag $service_name yes
 #    export SERVICE_CONFIG_prometheus_exporters=${TECHNOCORE_SERVICES}/prometheus/exporters.yml
 #fi
 
+if [ -z $PROD ]; then
+      export DEV_MOUNT_OUROBORS_SERVICES=${TECHNOCORE_ROOT}/services:/var/lib/technocore
+fi
+

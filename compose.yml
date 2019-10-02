@@ -36,9 +36,8 @@ services:
   ouroboros-technocore:
     command: >
       bash -c "deploy && 
-              echo 'Stack deployed. Sleeping until service restarted.' &&
-              mkfifo pipe && cat pipe &&
-              echo 'DONE'"
+        echo 'Finished deploy, sleeping until service is updated/restarted.' &&
+        mkfifo pipe && cat pipe"
     deploy:
       mode: global
       restart_policy:
@@ -66,3 +65,4 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - "${TECHNOCORE_ROOT}/.env:/var/lib/technocore/.env"
+      - ${DEV_MOUNT_OUROBORS_SERVICES:-$EMPTY_MOUNT}
