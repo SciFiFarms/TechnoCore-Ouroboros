@@ -5,8 +5,8 @@ networks:
 
 services:
   ouroboros:
-    # -u: allow self update
-    command: --self-update --swarm --label-enable --labels-only
+    # 86400 = 24 hours.
+    command: --self-update --swarm --label-enable --labels-only --interval 86400 
     deploy:
       mode: global
       restart_policy:
