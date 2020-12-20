@@ -57,6 +57,7 @@ services:
       - SERVER_HOSTNAME=${SERVER_HOSTNAME}
       - HOST_SERVICES_DIR=${TECHNOCORE_SERVICES}
       - TECHNOCORE_ROOT=${TECHNOCORE_ROOT}
+      - STACK_NAME=${STACK_NAME}
     image: ${image_provider:-scififarms}/technocore:${TAG:-latest}
     logging:
       driver: "${LOGGING_DRIVER}"
