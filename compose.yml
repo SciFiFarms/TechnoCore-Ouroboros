@@ -57,6 +57,7 @@ services:
       - SERVER_HOSTNAME=${SERVER_HOSTNAME}
       - HOST_SERVICES_DIR=${TECHNOCORE_SERVICES}
       - TECHNOCORE_ROOT=${TECHNOCORE_ROOT}
+      - TECHNOCORE_DATA=${TECHNOCORE_DATA}
       - STACK_NAME=${STACK_NAME}
     image: ${image_provider:-scififarms}/technocore:${TAG:-latest}
     logging:
@@ -65,5 +66,5 @@ services:
         tag: "{{.Name}}"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - "${TECHNOCORE_ROOT}/.env:/var/lib/technocore/.env"
+      - "${TECHNOCORE_DATA}:/mnt/technocore/data"
       - ${DEV_MOUNT_OUROBORS_SERVICES:-$EMPTY_MOUNT}
