@@ -6,7 +6,7 @@ networks:
 services:
   ouroboros:
     # 86400 = 24 hours.
-    command: --self-update --swarm --label-enable --labels-only --interval 86400 
+    command: --self-update --swarm --label-enable --labels-only --interval 86400
     deploy:
       mode: global
       restart_policy:
@@ -35,7 +35,7 @@ services:
 
   ouroboros-technocore:
     command: >
-      bash -c "deploy && 
+      bash -c "deploy &&
         echo 'Finished deploy, sleeping until service is updated/restarted.' &&
         mkfifo pipe && cat pipe"
     deploy:
@@ -67,4 +67,5 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - "${TECHNOCORE_DATA}:/mnt/technocore/data"
+      - ${TECHNOCORE_ROOT}:/mnt/technocore/
       - ${DEV_MOUNT_OUROBORS_SERVICES:-$EMPTY_MOUNT}
